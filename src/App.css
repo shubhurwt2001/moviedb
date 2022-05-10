@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #181818;
+  font-family: "Lato", sans-serif;
+  color: #fff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1366px;
   }
 }
+.card-body {
+  padding: 0px;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  font-size: 14px;
+}
+input {
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: #fff !important;
+  max-width: 600px;
+  margin-right: 10px;
+  border-radius: 100px !important;
+  border: 2px solid #fff !important;
+  padding-left: 15px !important;
+}
+.search {
+  padding: 8px;
+}
+.searchBtn {
+  background: transparent;
+  border: none;
+  border-radius: 100%;
+  font-size: 18px;
+  width: 38px;
+  border: 2px solid #fff;
+  height: 38px;
+  color: #fff;
+}
+.outer-search h2 {
+  color: red;
+  flex: 1;
+  font-family: "Alfa Slab One", cursive;
+}
+.outer-search h2 span {
+  color: #fff;
+}
+.outer-search .d-flex {
+  flex: 2;
+}
+.toggle {
+  margin-left: 30px;
+}
+.toggle .btn {
+  font-size: 24px;
+  color: #000;
+  min-width: 100px;
+  background-color: #fff;
+}
+.toggle .btn-left {
+  border-radius: 25px 0px 0px 25px;
+}
+.toggle .btn-right {
+  border-radius: 0px 25px 25px 0px;
+}
+.toggle .active {
+  background-color: red;
+  color: #fff;
+}
+.inner-div {
+  margin: 10px 0;
+}
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.shadow p {
+  font-size: 14px;
+  margin: 8px;
+}
+.shadow h6 {
+  margin: 8px;
+  font-weight: 800;
+}
+.inner-div {
+  position: relative;
+}
+.inner-div:hover {
+  transform: scale(1.3);
+  z-index: 999;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  cursor: pointer;
+}
+.inner-div:hover .shadow {
+  display: block;
+}
+.vote {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+.fa-star {
+  color: yellow;
+  margin-left: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .toggle-head {
+    align-items: center !important;
+    flex-direction: column !important;
+  }
+  .toggle {
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.page-link {
+  color: #000;
+}
+.page-link:focus {
+  box-shadow: 0 0 0 0.1rem #dc3546df;
+}
+.page-link:hover {
+  color: #333;
+}
+.page-item.active .page-link {
+  background-color: red;
+  border-color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.media_type {
+  text-transform: uppercase;
+  font-weight: 500;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-box {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  max-width: 450px;
+  z-index: 9999;
+}
+
+.fa-xmark {
+  font-size: 32px;
+  cursor: pointer;
+}
+.search-item {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+.search-item img {
+  margin-right: 10px;
+}
+.search-item p {
+  margin-bottom: 0;
+}
+.upper {
+  max-height: 15%;
+}
+.searchList {
+  height: 90%;
+  overflow-y: scroll;
+  max-height: 90%;
+}
+body::-webkit-scrollbar, .searchList::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-track, .searchList::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb, .searchList::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
