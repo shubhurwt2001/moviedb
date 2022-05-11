@@ -1,5 +1,6 @@
 import moment from "moment";
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const List = ({ day, week, toggle, setToggle }) => {
   return (
@@ -35,31 +36,31 @@ const List = ({ day, week, toggle, setToggle }) => {
               className="col-xl-2 col-lg-3 col-md-3 col-6 movie-item"
               key={index}
             >
-              <div className="inner-div">
-                <div className="shadow">
-                  <h6>{movie.title ? movie.title : movie.name}</h6>
-                  <p>{movie.overview.substring(0, 100)}...</p>
-                  <span className="media_type">
-                    {movie.media_type}
-                  </span>
-                  <p>
-                    {moment(
-                      movie.release_date
-                        ? movie.release_date
-                        : movie.first_air_date
-                    ).format("MMMM Do YYYY")}
-                  </p>
-                  <div className="vote">
-                    {movie.vote_average}
-                    <i className="fa-solid fa-star"></i>
+              <Link to={`/${movie.media_type}/${movie.id}`}>
+                <div className="inner-div">
+                  <div className="shadow">
+                    <h6>{movie.title ? movie.title : movie.name}</h6>
+                    <p>{movie.overview.substring(0, 100)}...</p>
+                    <span className="media_type">{movie.media_type}</span>
+                    <p>
+                      {moment(
+                        movie.release_date
+                          ? movie.release_date
+                          : movie.first_air_date
+                      ).format("MMMM Do YYYY")}
+                    </p>
+                    <div className="vote">
+                      {movie.vote_average}
+                      <i className="fa-solid fa-star"></i>
+                    </div>
                   </div>
+                  <img
+                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                    alt={movie.title ? movie.title : movie.name}
+                    width="100%"
+                  />
                 </div>
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                  alt={movie.title ? movie.title : movie.name}
-                  width="100%"
-                />
-              </div>
+              </Link>
             </div>
           );
         })}
@@ -71,31 +72,31 @@ const List = ({ day, week, toggle, setToggle }) => {
               className="col-xl-2 col-lg-3 col-md-3 col-6 movie-item"
               key={index}
             >
-              <div className="inner-div">
-                <div className="shadow">
-                  <h6>{movie.title ? movie.title : movie.name}</h6>
-                  <p>{movie.overview.substring(0, 100)}...</p>
-                  <span className="media_type">
-                    {movie.media_type}
-                  </span>
-                  <p>
-                    {moment(
-                      movie.release_date
-                        ? movie.release_date
-                        : movie.first_air_date
-                    ).format("MMMM Do YYYY")}
-                  </p>
-                  <div className="vote">
-                    {movie.vote_average}
-                    <i className="fa-solid fa-star"></i>
+              <Link to={`/${movie.media_type}/${movie.id}`}>
+                <div className="inner-div">
+                  <div className="shadow">
+                    <h6>{movie.title ? movie.title : movie.name}</h6>
+                    <p>{movie.overview.substring(0, 100)}...</p>
+                    <span className="media_type">{movie.media_type}</span>
+                    <p>
+                      {moment(
+                        movie.release_date
+                          ? movie.release_date
+                          : movie.first_air_date
+                      ).format("MMMM Do YYYY")}
+                    </p>
+                    <div className="vote">
+                      {movie.vote_average}
+                      <i className="fa-solid fa-star"></i>
+                    </div>
                   </div>
+                  <img
+                    src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                    alt={movie.title ? movie.title : movie.name}
+                    width="100%"
+                  />
                 </div>
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                  alt={movie.title ? movie.title : movie.name}
-                  width="100%"
-                />
-              </div>
+              </Link>
             </div>
           );
         })}
